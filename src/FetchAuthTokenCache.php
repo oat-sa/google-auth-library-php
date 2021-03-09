@@ -17,6 +17,7 @@
 
 namespace Google\Auth;
 
+use Google\Auth\Credentials\GCECredentials;
 use Psr\Cache\CacheItemPoolInterface;
 
 /**
@@ -133,6 +134,10 @@ class FetchAuthTokenCache implements
                 'Credentials fetcher does not implement ' .
                 'Google\Auth\SignBlobInterface'
             );
+        }
+
+        if ($this->fetcher instanceof  GCECredentials) {
+            $this->fetcher->setLastReceivedToken($this->fetchAuthTokenFromCache());
         }
 
         return $this->fetcher->signBlob($stringToSign, $forceOpenSsl);
