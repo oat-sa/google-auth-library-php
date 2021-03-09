@@ -416,6 +416,11 @@ class GCECredentials extends CredentialsLoader implements
         return null;
     }
 
+    public function setLastReceivedToken(array $token)
+    {
+        $this->lastReceivedToken = $token;
+    }
+
     /**
      * Get the client name from GCE metadata.
      *

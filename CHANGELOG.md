@@ -1,3 +1,7 @@
+## 1.16.0 (03/09/2021)
+
+* [feat]: add cache usage to get token on signBlob
+
 ## 1.15.0 (02/05/2021)
 
  * [feat]: support for PHP 8.0: updated dependencies and tests (#318, #319)
