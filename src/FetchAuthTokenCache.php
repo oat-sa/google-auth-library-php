@@ -136,7 +136,7 @@ class FetchAuthTokenCache implements
             );
         }
 
-        if ($this->fetcher instanceof  GCECredentials) {
+        if ($this->fetcher instanceof GCECredentials) {
             $this->fetcher->setLastReceivedToken($this->fetchAuthTokenFromCache());
         }
 
